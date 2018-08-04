@@ -7,6 +7,13 @@ import {
   RequestInit as NodeFetchRequestInit,
 } from 'node-fetch';
 
+// tbd fake types
+type Headers = any;
+
+type Request = any;
+
+type RequestInit = any;
+
 declare namespace Stardog {
     namespace HTTP {
         export type RdfMimeType = 'application/ld+json'
@@ -679,7 +686,9 @@ declare namespace Stardog {
          * @param {HTTP.RdfMimeType} accept The desired HTTP MIME type of the results
          * @param {object} params additional parameters if needed
          */
-        function execute(conn: Connection, database: string, query: string, accept?: HTTP.RdfMimeType, params?: object): Promise<HTTP.Body>;
+
+        // tbd what type from accept? ?
+        function execute(conn: Connection, database: string, query: string, accept?: string, params?: object): Promise<HTTP.Body>;
 
         /** 
          * Executes a query against a database within a transaction. 
